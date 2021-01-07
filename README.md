@@ -1,7 +1,7 @@
 ### 盒司令开放平台PHP版本SDK
 
 ```
-composer require hsl/open
+composer require hsl/open dev-master -vvv
 ```
 
 ```
