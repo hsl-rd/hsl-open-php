@@ -1,0 +1,24 @@
+{
+  "name": "hsl/open",
+  "description": "盒司令开放平台PHP版本SDK",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "hsl",
+      "email": "dev@hesiling.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "ext-openssl": "*",
+    "ext-json": "*",
+    "ext-curl": "*"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Hsl\\Open\\": "src/Hsl/Open"
+    }
+  }
+}
