@@ -1,5 +1,5 @@
 <?php
 
- CONST BRAND_ID= '100';
+ CONST BRAND_ID= '898989';
  CONST SHOP_ID= '001';
- CONST APP_ID= 'A-B-C-D';
+ CONST APP_ID= 'cf84eff6-a0cb-4f1a';

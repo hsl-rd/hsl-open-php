@@ -14,7 +14,15 @@ class Open
         $this->appId = $appId;
         $this->publicKey = $publicKey;
         $this->privateKey = $privateKey;
-        $this->urlPrefix = $debug ? 'https://newapi.hesiling.com' : 'https://api.hesiling.com';
+        $this->urlPrefix = $debug ? 'https://csapi.hesiling.com' : 'https://api.hesiling.com';
+    }
+
+
+    public function postOrder($params)
+    {
+        $hslPath = '/api/open/v4/kds/newOrder';
+        $data = $params;
+        return $this->post($data, $this->urlPrefix . $hslPath, $this->getAccessToken($data));
     }
 
     /**
@@ -51,6 +59,34 @@ class Open
             'shopId' => $shopId,
             'brandId' => $brandId,
             'tradeId' => $tradeId,
+        ];
+        return $this->post($data, $this->urlPrefix . $hslPath, $this->getAccessToken($data));
+    }
+
+    /**
+     * @param $shopId
+     * @param $brandId
+     * @param $tradeId
+     * @param $channel
+     * @param $channelDesc
+     * @param $pickUpCode
+     * @param $productStatus
+     * @return bool|string
+     * 推送订单详情
+     */
+    public function postOrderInfo($shopId, $brandId, $tradeId, $channel, $channelDesc, $pickUpCode, $productStatus)
+    {
+        $hslPath = '/api/open/v4/kds/newOrder';
+        $data = [
+            'appId' => $this->appId,
+            'shopId' => $shopId,
+            'brandId' => $brandId,
+            'tradeId' => $tradeId,
+            'channel' => $channel,
+            'channelDesc' => $channelDesc,
+            'pickUpCode' => $pickUpCode,
+            'productStatus' => $productStatus,
+            'timestamp' => time() * 1000
         ];
         return $this->post($data, $this->urlPrefix . $hslPath, $this->getAccessToken($data));
     }
