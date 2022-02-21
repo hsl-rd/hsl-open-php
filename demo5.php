@@ -16,4 +16,4 @@ $hslOpen = new Open(APP_ID, './private.pem', './public.pem', true);
 
 $tradeId = '161001422' . time(); // 订单ID
 
-var_dump($hslOpen->postOrderInfo(SHOP_ID, BRAND_ID, $tradeId, 1, '小程序', 'A003', 1));
+var_dump($hslOpen->postOrderInfo(SHOP_ID, BRAND_ID, $tradeId, 1, '小程序', 'A004', 1));

@@ -26,6 +26,25 @@ class Open
     }
 
     /**
+     * @param $shopId
+     * @param $brandId
+     * @param $tradeId
+     * @param $posChannel
+     * @return bool|string
+     */
+    public function getOrderWaitTime($shopId, $brandId, $tradeId = null, $posChannel = null) {
+        $hslPath = '/api/open/v4/kds/queueNumberV2';
+        $data = [
+            'appId' => $this->appId,
+            'shopId' => $shopId,
+            'brandId' => $brandId,
+            'tradeId' => $tradeId,
+            'posChannel' => $posChannel,
+        ];
+        return $this->post($data, $this->urlPrefix . $hslPath, $this->getAccessToken($data));
+    }
+
+    /**
      * 设置推送地址
      * @param $host
      * @param $path

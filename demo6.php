@@ -1,6 +1,6 @@
 <?php
 /**
- * 设置推送url的demo
+ * 获取等餐时长
  */
 require_once './vendor/autoload.php'; // 加载自动加载文件
 require './config.php';
@@ -11,7 +11,7 @@ $hslOpen = new Open(APP_ID, './private.pem', './public.pem', true);
 // 设置推送地址
 $brandId = BRAND_ID;
 
-$res = $hslOpen->setPushUrl('https://tool.hesiling.com', '/api/getOrdersInfo', $brandId);
+$res = $hslOpen->getOrderWaitTime(SHOP_ID, BRAND_ID);
 var_dump($res);
 //var_dump($hslOpen->postOrder([
 //    'shopId' => SHOP_ID,
